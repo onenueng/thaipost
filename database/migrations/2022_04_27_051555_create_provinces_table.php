@@ -17,8 +17,8 @@ return new class extends Migration
         Schema::create('provinces', function (Blueprint $table) {
             $table->id();
             $table->unsignedTinyInteger('code');
-            $table->string('namethai',125);
-            $table->string('nameeng',125);
+            $table->string('namethai',125)->unique();
+            $table->string('nameeng',125)->unique();
             $table->timestamps();
         });
 
