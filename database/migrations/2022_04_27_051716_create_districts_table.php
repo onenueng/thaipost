@@ -20,12 +20,12 @@ return new class extends Migration
             $table->unsignedTinyInteger('code');
             $table->string('namethai',125)->unique();
             $table->string('nameeng',125)->unique();
-            $table->foreignID('province_id')->constrained();
+            $table->foreignId('province_id')->constrained();
 
             $table->timestamps();
         });
 
-        $bk = Province::where('code',10)->first();
+        $bk = Province::where('code',10)->first(); 
         District::create(['code' => 1004, 'namethai' => 'บางรัก','nameeng' =>'Bang Rak', 'province_id' => $bk->id]);
         District::create(['code' => 1018, 'namethai' => 'คลองสาน','nameeng' =>'Klong San', 'province_id' => $bk->id]);
 

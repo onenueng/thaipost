@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('namethai',125)->unique();
             $table->string('nameeng',125)->unique();
             $table->string('postcode',5)->index();
-            $table->foreignID('district_id')->constrained();
+            $table->foreignId('district_id')->constrained();
             $table->timestamps();
         });
 
